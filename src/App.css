@@ -5,7 +5,7 @@
   font-family: monospace;
 }
 
-nav {
+header {
   display: flex;
   justify-content: center;
 }
@@ -14,9 +14,9 @@ nav {
   /* 4.25in is half of US letter width */
   /* 2.75in is 1/4 of US letter height */
   width: 4in;
-  height: 2.55in; 
+  height: 2.52in; 
 
-  padding: 10px;
+  padding: 5px;
   margin: 5px;
   border: 2px solid #ccc;
   display: inline-block;
@@ -24,8 +24,41 @@ nav {
 }
 
 .label h1 {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  font-size: 3.5rem;
+  font-size: 3.7rem;
   display: flex;
   justify-content: end;
+}
+
+.label-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.label-content span {
+  margin: 0;
+}
+
+.category {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.size {
+  font-size: 0.9rem;
+}
+
+@media print {
+  body {
+    margin: 0;
+    width: 100%;
+  }
+
+  header, form {
+    display: none;
+  }
+  
 }

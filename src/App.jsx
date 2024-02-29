@@ -51,6 +51,11 @@ function App() {
           {generatedLabels.map((label, index) => (
             <div key={index} className="label">
               <h1>{label.sku}</h1>
+              <div className="label-content">
+                <p className="category">Clothing • Shoes • B&W • H&S</p>
+                <span>Size</span>
+                <p className="size">XS | S | M | L | XL | 1X+ | masc</p>
+              </div>
             </div>
           ))}
         </div>
