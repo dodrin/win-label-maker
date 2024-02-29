@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [startSKU, setStartSKU] = useState("");
+  const [numSheets, setNumSheets] = useState(0);
+  const [generatedLabels, setGeneratedLabels] = useState([]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    let currentSKU = parseInt(startSKU); // Convert start SKU to integer
+    let labels = [];
+
+    // Generate SKU labels
+    for (let i = 0; i < numSheets * 8; i++) {
+      labels.push({ sku: currentSKU });
+      currentSKU++; // Increment SKU
+    }
+
+    // Update state with generated labels
+    setGeneratedLabels(labels);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header>
+        <h1>Label Generator</h1>
+      </header>
+      <main>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="start">Start SKU:</label>
+          <input
+            type="number"
+            id="start"
+            name="start"
+            value={startSKU}
+            onChange={(e) => setStartSKU(parseInt(e.target.value))}
+          />
+          <label htmlFor="sheet">Number of Sheets:</label>
+          <input
+            type="number"
+            id="sheet"
+            name="sheet"
+            value={numSheets}
+            onChange={(e) => setNumSheets(parseInt(e.target.value))}
+          />
+          <input type="submit" value="Generate" />
+        </form>
+        <div className="labels">
+          {generatedLabels.map((label, index) => (
+            <div key={index} className="label">
+              <h1>{label.sku}</h1>
+            </div>
+          ))}
+        </div>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
