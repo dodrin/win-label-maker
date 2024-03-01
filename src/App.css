@@ -1,42 +1,84 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
+  text-align: center;
+  font-family: monospace;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit {
+  width: 5rem;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.num {
+  margin-left: 1rem;
+}
+
+.label {
+  /* 4.25in is half of US letter width */
+  /* 2.75in is 1/4 of US letter height */
+  width: 4in;
+  height: 2.52in;
+
+  padding: 5px;
+  margin: 3px;
+  border: 2px solid #ccc;
+  display: inline-block;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.label h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  margin-right: 5px;
+  font-size: 3.7rem;
+  display: flex;
+  justify-content: end;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.label-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+.label-content span {
+  margin: 0;
+}
+
+.category {
+  margin-top: 0;
+  padding-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.size {
+  font-size: 0.9rem;
+}
+
+@media print {
+  body {
+    margin: 0;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  header,
+  form {
+    display: none;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
