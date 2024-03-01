@@ -10,14 +10,31 @@ header {
   justify-content: center;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit {
+  width: 5rem;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.num {
+  margin-left: 1rem;
+}
+
 .label {
   /* 4.25in is half of US letter width */
   /* 2.75in is 1/4 of US letter height */
   width: 4in;
-  height: 2.52in; 
+  height: 2.52in;
 
   padding: 5px;
-  margin: 5px;
+  margin: 3px;
   border: 2px solid #ccc;
   display: inline-block;
   text-align: center;
@@ -26,6 +43,7 @@ header {
 .label h1 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  margin-right: 5px;
   font-size: 3.7rem;
   display: flex;
   justify-content: end;
@@ -35,6 +53,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: 10px;
 }
 
 .label-content span {
@@ -43,8 +62,8 @@ header {
 
 .category {
   margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 1rem;
+  padding-bottom: 10px;
+  font-size: 0.9rem;
 }
 
 .size {
@@ -57,8 +76,9 @@ header {
     width: 100%;
   }
 
-  header, form {
+  header,
+  form {
     display: none;
   }
-  
+
 }
