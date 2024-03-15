@@ -65,6 +65,7 @@ function App() {
             >
               <option value="Clothing">Clothing</option>
               <option value="Accessories">Accessories</option>
+              <option value="Shoes">Shoes</option>
             </select>
           </div>
 
@@ -83,16 +84,18 @@ function App() {
 
                 {label.category === "Accessories" && (
                   <span className="category">
-                    Bags & Wallets • Hats & Scarves • Shoes
+                    Bags & Wallets • Hats & Scarves
                   </span>
+                )}
+
+                {label.category === "Shoes" && (
+                  <span className="category">Shoes</span>
                 )}
 
                 <span>Size</span>
                 {label.category === "Clothing" && (
                   <p className="size">XS | S | M | L | XL | 1X+ | masc</p>
                 )}
-
-                
               </div>
             </div>
           ))}
